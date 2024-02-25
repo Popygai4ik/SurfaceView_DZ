@@ -54,7 +54,7 @@ public class CustomSurfaceView extends SurfaceView implements SurfaceHolder.Call
     }
 
     private void spawnCircle(int x, int y, int speedX, int speedY) {
-        int radius = random.nextInt(100) + 20;
+        int radius = random.nextInt(65) + 20;
         int R = random.nextInt(256);
         int G = random.nextInt(256);
         int B = random.nextInt(256);
@@ -127,13 +127,13 @@ public class CustomSurfaceView extends SurfaceView implements SurfaceHolder.Call
         }
 
         private void draw(Canvas canvas) {
-            List<Circle> circlesCopy;
+            List<Circle> vrem_krugi;
             synchronized (krygi) {
-                circlesCopy = new ArrayList<>(krygi);
+                vrem_krugi = new ArrayList<>(krygi);
             }
 
             canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
-            for (Circle circle : circlesCopy) {
+            for (Circle circle : vrem_krugi) {
                 paint.setColor(circle.color);
                 canvas.drawCircle(circle.x, circle.y, circle.radius, paint);
             }
